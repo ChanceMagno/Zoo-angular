@@ -37,12 +37,27 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-    <div class="container-fluid">
+    <app-root>
 
-
-    </div>
     <div class="container-fluid" id="rootContainer">
-      <app-root>Loading...</app-root>
-    </div>
+      <div class="loadingPage">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+              <div class="circle">
+              </div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle">
+              </div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-root>
   </body>
 </html>

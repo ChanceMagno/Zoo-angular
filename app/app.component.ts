@@ -5,7 +5,8 @@ import {Animal} from './animal.model';
   selector: 'app-root',
   template: `
   <div class="container">
-  <h1> Test {{masterAnimalList[0].species}} </h1>
+
+  <h1> test </h1>
   </div>
 `
 })
