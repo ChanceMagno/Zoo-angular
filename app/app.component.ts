@@ -5,8 +5,15 @@ import {Animal} from './animal.model';
   selector: 'app-root',
   template: `
   <div class="container">
+    <div class="row">
+      <div class="col m10">
+        <all-animals [childAnimalList]="masterAnimalList"> </all-animals>
+      </div>
+      <div class="col m2">
+      </div>
+    </div>
 
-  <h1> test </h1>
+
   </div>
 `
 })
