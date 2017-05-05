@@ -1,0 +1,21 @@
+{
+  "name": "zoo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Chance <ChanceMagno@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "boostrap#^3.3.7",
+    "materialize": "^0.98.2"
+  }
+}
