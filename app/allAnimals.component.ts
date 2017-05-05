@@ -5,25 +5,39 @@ import {Animal} from './animal.model';
 @Component({
   selector: 'all-animals',
   template: `
-  <md-grid-list cols="3" gutterSize="10px">
+
+
+  <md-grid-list cols="3"  gutterSize="10px">
     <md-grid-tile class="animalCard" *ngFor="let animal of childAnimalList;">
       <md-card>
-      <md-card-title><h3>{{animal.species}}</h3></md-card-title>
-      <md-card-subtitle>{{animal.animalType}}</md-card-subtitle>
-       <Strong>Name: </Strong> {{animal.name}} <br>
-       <Strong>Age: </Strong> {{animal.age}} <br>
-       <Strong>Species: </Strong> {{animal.species}} <br>
-       <Strong>Location: </Strong> {{animal.location}} <br>
-       <Strong>Sex: </Strong> {{animal.sex}} <br>
-       <Strong>Number of Caretakers: </Strong> {{animal.caretakers}} <br>
-       <Strong>Likes: </Strong> {{animal.likes}} <br>
-       <Strong>Dislikes: </Strong> {{animal.dislikes}} <br>
-       <Strong>Health Status: </Strong> {{animal.healthStatus}} <br>
-       <Strong>Diet: </Strong> {{animal.diet}} <br>
-
+      <md-card-title>
+          <h5>{{animal.species}}</h5>
+      </md-card-title>
+      <div class="row">
+      <div class="col m6">
+      <ul>
+       <li>Name:  {{animal.name}}</li>
+       <li>Type:  {{animal.animalType}}</li>
+       <li>Age:  {{animal.age}}</li>
+       <li>Species:  {{animal.species}}</li>
+       <li>Location:  {{animal.location}}</li>
+       <li>Sex:  {{animal.sex}}</li>
+          </ul>
+       </div>
+       <div class="col m6">
+           <ul>
+       <li>Number of Caretakers:  {{animal.caretakers}}</li>
+       <li>Likes:  {{animal.likes}}</li>
+       <li>Dislikes:  {{animal.dislikes}}</li>
+       <li>Health Status:  {{animal.healthStatus}}</li>
+       <li>Diet:  {{animal.diet}}</li>
+       </ul>
+       </div>
+       </div>
       </md-card>
     </md-grid-tile>
   </md-grid-list>
+
   `
 })
 

@@ -17,4 +17,31 @@
       border-width: medium;
       border-style: solid;
       border-radius: 30px;
+      padding-bottom: 10px;
     }
+
+      md-card.mat-card:hover {
+
+        background-color: lightblue !important;
+        font-size: 125%;
+        transition: background-color 1s linear;
+        transition: font-size .5s linear;
+        border-width: medium;
+        border-style: solid;
+        border-radius: 30px;
+        padding-bottom: 10px;
+      }
+
+nav {
+  background-color: #3f51b5;
+  margin-bottom: 100px;
+}
+
+body {
+  background-color: #E3F2FD;
+}
+
+md-card:hover {
+  overflow: scroll;
+  overflow-x: hidden;
+}
