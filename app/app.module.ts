@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import {AllAnimalComponent} from './allAnimals.component';
+import {AddAnimalComponent} from './addAnimal.component';
 
 
 
@@ -23,7 +24,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [ BrowserModule, FormsModule, BrowserAnimationsModule, MaterialModule.forRoot(),
 ],
-  declarations: [ AppComponent, AllAnimalComponent],
+  declarations: [ AppComponent, AllAnimalComponent, AddAnimalComponent],
   bootstrap: [ AppComponent ]
 })
 
