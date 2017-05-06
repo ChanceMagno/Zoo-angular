@@ -23,11 +23,9 @@ import {Animal} from './animal.model';
         <all-animals [childAnimalList]="masterAnimalList"> </all-animals>
       </div>
       <div class="col m2">
-        <add-animal> </add-animal> 
+        <add-animal> </add-animal>
       </div>
     </div>
-
-
   </div>
 `
 })
