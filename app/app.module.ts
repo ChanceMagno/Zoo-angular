@@ -7,6 +7,10 @@ import { MaterialModule } from '@angular/material';
 import {AllAnimalComponent} from './allAnimals.component';
 import {AddAnimalComponent} from './addAnimal.component';
 import {EditAnimalComponent} from './editAnimal.component';
+import {FilterAnimalComponent} from './filterAnimals.component';
+import {FilterUniquePipe} from './filterUnique.pipe';
+import {SelectAnimalPipe} from './selectAnimals.pipe';
+
 
 
 import { FormsModule } from '@angular/forms';
@@ -24,7 +28,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [ BrowserModule, FormsModule, BrowserAnimationsModule, MaterialModule.forRoot(),
 ],
-  declarations: [ AppComponent, AllAnimalComponent, AddAnimalComponent, EditAnimalComponent],
+  declarations: [ AppComponent, AllAnimalComponent, AddAnimalComponent, EditAnimalComponent, FilterAnimalComponent, FilterUniquePipe, SelectAnimalPipe],
   bootstrap: [ AppComponent ]
 })
 

@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import {Animal} from './animal.model';
 
+declare var jQuery: any;
 
 @Component({
   selector:'add-animal',
@@ -64,7 +65,7 @@ import {Animal} from './animal.model';
      </div>
      </div>
      <div class="col m6">
-     <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons"  md-button (click)="addNewAnimal(species.value, name.value, age.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value, animalType.value, healthStatus.value, diet.value)" onclick="Materialize.toast('Animal Saved', 4000)">add</i></a>
+     <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons"  md-button (click)="addNewAnimal(species.value, name.value, age.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value, animalType.value, healthStatus.value, diet.value)" onclick="Materialize.toast('Animal Saved', 4000)" >add</i></a>
      </div>
      </div>
     </md-card>
@@ -76,7 +77,9 @@ export class AddAnimalComponent {
 
     addNewAnimal(species, name, age, location, caretakers, sex, likes, dislikes, animalType, healthStatus, diet){
       var newAnimal: Animal = new Animal(species, name, parseInt(age), location, parseInt(caretakers), sex, likes, dislikes, animalType, healthStatus, diet);
-      this.newAnimalSender.emit(newAnimal)
+      this.newAnimalSender.emit(newAnimal);
+
     }
+
 
 }

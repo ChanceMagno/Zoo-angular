@@ -51,3 +51,7 @@ container {
 #addAnimalForm {
   background-color: white !important;
 }
+
+#updateButton {
+  text-align: center !important;
+}

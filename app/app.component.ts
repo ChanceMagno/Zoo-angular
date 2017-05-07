@@ -18,14 +18,17 @@ declare var jQuery: any;
   </nav>
   <md-sidenav #sidenav class="example-sidenav" mode="push">
     <add-animal (newAnimalSender)="addNewAnimal($event)"> </add-animal>
+    <edit-animal [childSelectedAnimal]="animalSelected"  (updatedAnimalSender)="updateAnimal($event)"></edit-animal>
   </md-sidenav>
 
     <div class="row">
       <div class="col m10">
-        <all-animals [childAnimalList]="masterAnimalList" (displayEdit)="editAnimal($event)"> </all-animals>
-        <edit-animal [childSelectedAnimal]="animalSelected" ></edit-animal>
+        <all-animals [childAnimalList]="masterAnimalList|selectAnimals:selectAnimalsFilterType:selectFilterValue" (displayEdit)="editAnimal($event)"> </all-animals>
+
       </div>
       <div class="col m2">
+      <filter-animals [childAnimalList]="masterAnimalList" (filterSender)="filterSender($event)"></filter-animals>
+
       </div>
     </div>
   </md-sidenav-container>
@@ -33,27 +36,37 @@ declare var jQuery: any;
 `
 })
 
-
 export class AppComponent {
 
   masterAnimalList: Animal[] = [
-    new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
+    new Animal('Black Bear', 'Wolverine', 2,  'Southern Trail', 5, 'male', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
     new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
     new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
     new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
   ];
 
   animalSelected = null;
+  selectAnimalsFilterType: string = "All";
+  selectFilterValue: string;
 
-  addNewAnimal(newAnimal){
+  filterSender(filterParams){
+    console.log(filterParams);
+    this.selectFilterValue = filterParams[1];
+    this.selectAnimalsFilterType = filterParams[0];
+  }
+
+  addNewAnimal(newAnimal) {
     this.masterAnimalList.push(newAnimal);
   }
 
   editAnimal(animal) {
     this.animalSelected = animal;
-    console.log(this.animalSelected);
   }
 
+  updateAnimal(updateInfo) {
+    var index = this.masterAnimalList.indexOf(updateInfo[1]);
+    this.masterAnimalList[index] = updateInfo[0];
+  }
 
 
 }
