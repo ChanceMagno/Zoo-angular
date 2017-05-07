@@ -17,8 +17,20 @@ import {Animal} from './animal.model';
         <label for='name'>Name</label>
      </div>
      <div class="input-field" >
+      <input  id=#age type="number" class="validate" #age>
+        <label for='age'>Age</label>
+     </div>
+     <div class="input-field" >
       <input  id=#location type="text" class="validate" #location>
-        <label for='location'>Species</label>
+        <label for='location'>Location</label>
+     </div>
+     <div class="input-field" >
+      <input  id=#caretakers type="number" class="validate" #caretakers>
+        <label for='caretakers'>Amount of Care Takers</label>
+     </div>
+     <div class="input-field" >
+      <input  id=#sex type="text" class="validate" #sex>
+        <label for='sex'>Sex</label>
      </div>
      <div class="input-field" >
       <input  id=#likes type="text" class="validate" #likes>
@@ -32,27 +44,16 @@ import {Animal} from './animal.model';
       <input  id=#animalType type="text" class="validate" #animalType>
         <label for='animalType'>Animal Type</label>
      </div>
-     <div class="col m3">
-       <form>
-        <h4>Sex</h4>
-          <p>
-            <input name="group1" type="radio" id="test1" [value]="Male"/>
-            <label for="test1">Male</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="test2" [value]="Female"/>
-            <label for="test2">Female</label>
-          </p>
-        </form>
-      </div>
-
-
-
-
-
-
- <button md-button (click)="addNewAnimal(sex.value)"> Add Animal </button>
-</md-card>
+     <div class="input-field" >
+      <input  id=#healthStatus type="text" class="validate" #healthStatus>
+        <label for='healthStatus'>Health Status</label>
+     </div>
+     <div class="input-field" >
+      <input  id=#diet type="text" class="validate" #diet>
+        <label for='diet'>Diet</label>
+     </div>
+     <button md-button (click)="addNewAnimal(species.value, name.value, age.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value, animalType.value, healthStatus.value, diet.value)"> Add Animal </button>
+    </md-card>
   `
 })
 
@@ -62,8 +63,11 @@ export class AddAnimalComponent {
     // formLabels: string [] = ['Species', 'Name', 'Age', 'Location', 'Care Takers', 'Sex', 'Likes', 'Dislikes', 'Animal Type', 'Health Status', 'Diet'];
     // animalFormVariable: string [] = ['species', 'name', 'age', 'location', 'caretakers', 'sex', 'likes', 'dislikes', 'animaleType', 'healthStatus', 'diet'];
 
-    addNewAnimal(sex){
-      console.log(sex);
+    addNewAnimal(species, name, age, location, caretakers, sex, likes, dislikes, animalType, healthStatus, diet){
+      console.log(species, name, age, location, caretakers, sex, likes, dislikes, animalType, healthStatus, diet)
+      var newAnimal: Animal = new Animal(species, name, parseInt(age), location, parseInt(caretakers), sex, likes, dislikes, animalType, healthStatus, diet);
+      this.newAnimalSender.emit(newAnimal)
+
     }
 
 }

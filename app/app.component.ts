@@ -23,7 +23,7 @@ import {Animal} from './animal.model';
         <all-animals [childAnimalList]="masterAnimalList"> </all-animals>
       </div>
       <div class="col m2">
-        <add-animal> </add-animal>
+        <add-animal (newAnimalSender)="addNewAnimal($event)"> </add-animal>
       </div>
     </div>
   </div>
@@ -39,5 +39,9 @@ export class AppComponent {
     new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
     new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
   ];
+
+  addNewAnimal(newAnimal){
+    this.masterAnimalList.push(newAnimal);
+  }
 
 }
