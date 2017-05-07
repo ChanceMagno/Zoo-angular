@@ -1,31 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import {Animal} from './animal.model';
+
+declare var jQuery: any;
 
 @Component({
   selector: 'app-root',
   template: `
   <div class="container-fluid">
+  <md-sidenav-container class="add-animal">
   <nav>
     <div class="nav-wrapper">
-      <a class="brand-logo right">Logo</a>
+      <a class="brand-logo right">Portland Zoo</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a >New Animal</a></li>
-        <li><a>Components</a></li>
-        <li><a>JavaScript</a></li>
+        <li><a (click)="sidenav.open()" id="addKegButton">Add Animal</a></li>
       </ul>
     </div>
   </nav>
-  </div>
+  <md-sidenav #sidenav class="example-sidenav" mode="push">
+    <add-animal (newAnimalSender)="addNewAnimal($event)"> </add-animal>
+  </md-sidenav>
   <div class="container">
-
     <div class="row">
       <div class="col m10">
         <all-animals [childAnimalList]="masterAnimalList"> </all-animals>
       </div>
       <div class="col m2">
-        <add-animal (newAnimalSender)="addNewAnimal($event)"> </add-animal>
       </div>
     </div>
+  </div>
+  </md-sidenav-container>
   </div>
 `
 })
@@ -42,6 +45,7 @@ export class AppComponent {
 
   addNewAnimal(newAnimal){
     this.masterAnimalList.push(newAnimal);
+
   }
 
 }

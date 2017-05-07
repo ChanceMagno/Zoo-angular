@@ -4,33 +4,33 @@
 }
 
 .loadingPage {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) }
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+  }
 
-    md-card.mat-card {
-      height: 100%;
-      background-color: #039be5 !important;
-      border-width: medium;
-      border-style: solid;
-      border-radius: 30px;
-      padding-bottom: 10px;
-    }
+md-card.mat-card {
+  height: 100%;
+  background-color: #039be5 !important;
+  border-width: medium;
+  border-style: solid;
+  border-radius: 30px;
+  padding-bottom: 10px;
+}
 
-      md-card.mat-card:hover {
-
-        background-color: lightblue !important;
-        font-size: 125%;
-        transition: background-color 1s linear;
-        transition: font-size .5s linear;
-        border-width: medium;
-        border-style: solid;
-        border-radius: 30px;
-        padding-bottom: 10px;
-      }
+md-card.mat-card:hover {
+  background-color: lightblue !important;
+  font-size: 110%;
+  transition: background-color 1s linear;
+  transition: font-size .5s linear;
+  border-width: medium;
+  border-style: solid;
+  border-radius: 30px;
+  padding-bottom: 10px;
+}
 
 nav {
   background-color: #3f51b5;
@@ -42,6 +42,21 @@ body {
 }
 
 md-card:hover {
-  overflow: scroll;
+  overflow: hidden;
   overflow-x: hidden;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+container {
+  height: 100%;
+}
+
+#addAnimalForm {
+  background-color: white !important;
 }
