@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import {AllAnimalComponent} from './allAnimals.component';
 import {AddAnimalComponent} from './addAnimal.component';
-
+import {EditAnimalComponent} from './editAnimal.component';
 
 
 import { FormsModule } from '@angular/forms';
@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [ BrowserModule, FormsModule, BrowserAnimationsModule, MaterialModule.forRoot(),
 ],
-  declarations: [ AppComponent, AllAnimalComponent, AddAnimalComponent],
+  declarations: [ AppComponent, AllAnimalComponent, AddAnimalComponent, EditAnimalComponent],
   bootstrap: [ AppComponent ]
 })
 

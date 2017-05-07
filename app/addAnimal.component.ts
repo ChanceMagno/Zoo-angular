@@ -13,7 +13,7 @@ import {Animal} from './animal.model';
     <div class="col m6">
     <md-card-subtitle></md-card-subtitle>
      <div class="input-field" >
-      <input  id=#species type="text" class="validate" #species>
+      <input  required id=#species type="text" class="validate" #species>
         <label for='species'>Species:</label>
      </div>
      <div class="input-field" >
@@ -54,15 +54,19 @@ import {Animal} from './animal.model';
       <input  id=#healthStatus type="text" class="validate" #healthStatus>
         <label for='healthStatus'>Health Status:</label>
      </div>
+     </div>
+     </div>
+     <div class="row animalFormBody">
+     <div class="col m6">
      <div class="input-field" >
       <input  id=#diet type="text" class="validate" #diet>
         <label for='diet'>Diet:</label>
      </div>
-     <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons"  md-button (click)="addNewAnimal(species.value, name.value, age.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value, animalType.value, healthStatus.value, diet.value)" onclick="Materialize.toast('Animal Saved', 4000)" >add</i></a>
      </div>
-      </div>
-     <button class="addAnimalSubmit" md-button (click)="addNewAnimal(species.value, name.value, age.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value, animalType.value, healthStatus.value, diet.value)" onclick="Materialize.toast('Animal Saved', 4000)"> Add Animal </button>
-
+     <div class="col m6">
+     <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons"  md-button (click)="addNewAnimal(species.value, name.value, age.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value, animalType.value, healthStatus.value, diet.value)" onclick="Materialize.toast('Animal Saved', 4000)">add</i></a>
+     </div>
+     </div>
     </md-card>
   `
 })

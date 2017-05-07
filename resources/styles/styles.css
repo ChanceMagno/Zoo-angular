@@ -37,15 +37,6 @@ nav {
   margin-bottom: 100px;
 }
 
-body {
-  background-color: #E3F2FD;
-}
-
-md-card:hover {
-  overflow: hidden;
-  overflow-x: hidden;
-}
-
 .example-sidenav-content {
   display: flex;
   height: 100%;
