@@ -14,45 +14,45 @@ import {Animal} from './animal.model';
   <md-card-subtitle></md-card-subtitle>
    <div class="input-field" >
     <input value={{childSelectedAnimal.species}} required id=#species type="text" class="validate" #species>
-      <label for='species'>Species:</label>
+      <label  class="active" for='species'>Species:</label>
    </div>
    <div class="input-field" >
     <input  value={{childSelectedAnimal.name}} id=#name type="text" class="validate" #name>
-      <label for='name'>Name:</label>
+      <label  class="active" for='name'>Name:</label>
    </div>
    <div class="input-field" >
     <input  value={{childSelectedAnimal.age}} id=#age type="number" class="validate" #age>
-      <label for='age'>Age:</label>
+      <label class="active" for='age'>Age:</label>
    </div>
    <div class="input-field" >
     <input  value={{childSelectedAnimal.location}} id=#location type="text" class="validate" #location>
-      <label for='location'>Location:</label>
+      <label class="active" for='location'>Location:</label>
    </div>
    <div class="input-field" >
     <input value={{childSelectedAnimal.caretakers}} id=#caretakers type="number" class="validate" #caretakers>
-      <label for='caretakers'>Care Takers:</label>
+      <label  class="active" for='caretakers'>Care Takers:</label>
    </div>
    </div>
   <div class="col m6">
    <div class="input-field" >
     <input  value={{childSelectedAnimal.sex}} id=#sex type="text" class="validate" #sex>
-      <label for='sex'>Sex:</label>
+      <label  class="active" for='sex'>Sex:</label>
    </div>
    <div class="input-field" >
     <input value={{childSelectedAnimal.likes}} id=#likes type="text" class="validate" #likes>
-      <label for='likes'>Likes:</label>
+      <label  class="active" for='likes'>Likes:</label>
    </div>
    <div class="input-field" >
     <input  value={{childSelectedAnimal.dislikes}} id=#dislikes type="text" class="validate" #dislikes>
-      <label for='dislikes'>Dislikes:</label>
+      <label  class="active" for='dislikes'>Dislikes:</label>
    </div>
    <div class="input-field" >
     <input value={{childSelectedAnimal.dislikes}} id=#animalType type="text" class="validate" #animalType>
-      <label for='animalType'>Animal Type:</label>
+      <label  class="active" for='animalType'>Animal Type:</label>
    </div>
    <div class="input-field" >
     <input value={{childSelectedAnimal.healthStatus}} id=#healthStatus type="text" class="validate" #healthStatus>
-      <label for='healthStatus'>Health Status:</label>
+      <label  class="active" for='healthStatus'>Health Status:</label>
    </div>
    </div>
    </div>
@@ -60,7 +60,7 @@ import {Animal} from './animal.model';
    <div class="col m6">
    <div class="input-field" >
     <input value={{childSelectedAnimal.diet}} id=#diet type="text" class="validate" #diet>
-      <label for='diet'>Diet:</label>
+      <label  class="active" for='diet'>Diet:</label>
    </div>
    </div>
    <div class="col m6">

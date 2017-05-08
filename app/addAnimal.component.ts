@@ -76,6 +76,7 @@ export class AddAnimalComponent {
   @Output () newAnimalSender = new EventEmitter();
 
     addNewAnimal(species, name, age, location, caretakers, sex, likes, dislikes, animalType, healthStatus, diet){
+
       var newAnimal: Animal = new Animal(species, name, parseInt(age), location, parseInt(caretakers), sex, likes, dislikes, animalType, healthStatus, diet);
       this.newAnimalSender.emit(newAnimal);
 

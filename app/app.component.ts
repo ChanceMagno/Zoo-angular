@@ -12,7 +12,7 @@ declare var jQuery: any;
     <div class="nav-wrapper">
       <a class="brand-logo right">Portland Zoo</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a (click)="sidenav.open()" id="addAnimalButton">Add Animal</a></li>
+        <li><a (click)="sidenav.toggle()" id="addAnimalButton">Add Animal</a></li>
       </ul>
     </div>
   </nav>
@@ -20,19 +20,17 @@ declare var jQuery: any;
     <add-animal (newAnimalSender)="addNewAnimal($event)"> </add-animal>
     <edit-animal [childSelectedAnimal]="animalSelected"  (updatedAnimalSender)="updateAnimal($event)"></edit-animal>
   </md-sidenav>
-
     <div class="row">
       <div class="col m10">
         <all-animals [childAnimalList]="masterAnimalList|selectAnimals:selectAnimalsFilterType:selectFilterValue" (displayEdit)="editAnimal($event)"> </all-animals>
-
       </div>
       <div class="col m2">
       <filter-animals [childAnimalList]="masterAnimalList" (filterSender)="filterSender($event)"></filter-animals>
-
       </div>
     </div>
   </md-sidenav-container>
   </div>
+
 `
 })
 
@@ -50,7 +48,6 @@ export class AppComponent {
   selectFilterValue: string;
 
   filterSender(filterParams){
-    console.log(filterParams);
     this.selectFilterValue = filterParams[1];
     this.selectAnimalsFilterType = filterParams[0];
   }
@@ -67,6 +64,4 @@ export class AppComponent {
     var index = this.masterAnimalList.indexOf(updateInfo[1]);
     this.masterAnimalList[index] = updateInfo[0];
   }
-
-
 }

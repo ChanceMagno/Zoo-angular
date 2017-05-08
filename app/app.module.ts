@@ -10,6 +10,7 @@ import {EditAnimalComponent} from './editAnimal.component';
 import {FilterAnimalComponent} from './filterAnimals.component';
 import {FilterUniquePipe} from './filterUnique.pipe';
 import {SelectAnimalPipe} from './selectAnimals.pipe';
+import {MdSidenavModule} from '@angular/material';
 
 
 
@@ -26,7 +27,7 @@ import { FormsModule } from '@angular/forms';
 // }
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule, BrowserAnimationsModule, MaterialModule.forRoot(),
+  imports: [ BrowserModule, FormsModule, BrowserAnimationsModule, MaterialModule.forRoot(), MdSidenavModule,
 ],
   declarations: [ AppComponent, AllAnimalComponent, AddAnimalComponent, EditAnimalComponent, FilterAnimalComponent, FilterUniquePipe, SelectAnimalPipe],
   bootstrap: [ AppComponent ]
