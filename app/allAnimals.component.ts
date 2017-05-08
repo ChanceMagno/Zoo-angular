@@ -7,7 +7,7 @@ import {Animal} from './animal.model';
   template: `
 
 
-  <md-grid-list cols="3"  gutterSize="10px">
+  <md-grid-list cols="4"  gutterSize="10px">
     <md-grid-tile class="animalCard" *ngFor="let animal of childAnimalList;">
       <md-card>
       <md-card-title>
@@ -23,7 +23,7 @@ import {Animal} from './animal.model';
       <div class="row">
         <div class="col m6">
           <ul>
-           <li>Name:  {{animal.name}}</li>
+           <li><strong>Name:  </strong>{{animal.name}}</li>
            <li>Type:  {{animal.animalType}}</li>
            <li>Age:  {{animal.age}}</li>
            <li>Species:  {{animal.species}}</li>
