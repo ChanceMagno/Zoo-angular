@@ -9,7 +9,7 @@ import {Animal} from './animal.model';
 
   <md-grid-list cols="3"  gutterSize="10px">
     <md-grid-tile class="animalCard" *ngFor="let animal of childAnimalList;">
-      <md-card *ngIf = "animal !== selectedAnimal">
+      <md-card>
       <md-card-title>
         <div class="row">
           <div class="col m10">

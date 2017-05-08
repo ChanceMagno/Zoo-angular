@@ -8,7 +8,7 @@ declare var jQuery: any;
   template: `
   <div class="row">
   <ul class="collapsible " data-collapsible="accordion">
-  <div class="collapsible-header filter">All Animals</div>
+  <div class="collapsible-header filter"><a (click)="filterOnClick(All, nothing)">All Animals</a></div>
     <li *ngFor="let category of animalCategories; let i = index">
     <div class="collapsible-header">{{animalCategoryDisplayName[i]}}</div>
       <div class="collapsible-body">
