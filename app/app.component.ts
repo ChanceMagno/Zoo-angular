@@ -17,12 +17,12 @@ declare var jQuery: any;
     </div>
   </nav>
   <md-sidenav #sidenav class="example-sidenav" mode="push">
-    <add-animal (newAnimalSender)="addNewAnimal($event)"> </add-animal>
-    <edit-animal [childSelectedAnimal]="animalSelected"  (updatedAnimalSender)="updateAnimal($event)"></edit-animal>
+    <add-animal (newAnimalSender)="addNewAnimal($event)" (closeNavBar)="sidenav.toggle()"> </add-animal>
+    <edit-animal [childSelectedAnimal]="animalSelected"  (updatedAnimalSender)="updateAnimal($event)" (hideNavBar)="sidenav.toggle()"></edit-animal>
   </md-sidenav>
     <div class="row">
       <div class="col m10">
-        <all-animals [childAnimalList]="masterAnimalList|selectAnimals:selectAnimalsFilterType:selectFilterValue" (displayEdit)="editAnimal($event)"> </all-animals>
+        <all-animals [childAnimalList]="masterAnimalList|selectAnimals:selectAnimalsFilterType:selectFilterValue" (displayEdit)="editAnimal($event)" (showNavBar)="sidenav.toggle()"> </all-animals>
       </div>
       <div class="col m2">
       <filter-animals [childAnimalList]="masterAnimalList" (filterSender)="filterSender($event)"></filter-animals>

@@ -74,6 +74,7 @@ import {Animal} from './animal.model';
 export class EditAnimalComponent {
 @Input() childSelectedAnimal: Animal;
 @Output() updatedAnimalSender = new EventEmitter ();
+@Output() hideNavBar = new EventEmitter ();
 
 updateAnimal(species, name, age, location, caretakers, sex, likes, dislikes, animalType, healthStatus, diet) {
 
@@ -81,5 +82,6 @@ updateAnimal(species, name, age, location, caretakers, sex, likes, dislikes, ani
   var updatedAnimalInfo = [updatedAnimal, this.childSelectedAnimal];
   this.updatedAnimalSender.emit(updatedAnimalInfo);
   this.childSelectedAnimal = null;
+  this.hideNavBar.emit();
 }
 }

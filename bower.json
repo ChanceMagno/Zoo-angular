@@ -6,7 +6,7 @@
     "Chance <ChanceMagno@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/ChanceMagno/Zoo-angular",
   "ignore": [
     "**/.*",
     "node_modules",

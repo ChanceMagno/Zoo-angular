@@ -51,10 +51,13 @@ import {Animal} from './animal.model';
 export class AllAnimalComponent {
   @Input() childAnimalList: Animal [];
   @Output() displayEdit = new EventEmitter ();
+  @Output() showNavBar = new EventEmitter ();
   selectedAnimal: Animal;
 
   showEdit(animal) {
+    this.showNavBar.emit();
     this.displayEdit.emit(animal);
     this.selectedAnimal = animal;
+
   }
 }
