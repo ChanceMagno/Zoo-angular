@@ -6,7 +6,7 @@ declare var jQuery: any;
 @Component({
   selector: 'app-root',
   template: `
-  <div class="container-fluid">
+  <div class="container-fluid" id="mainContainer">
   <md-sidenav-container class="add-animal">
   <nav>
     <div class="nav-wrapper">
@@ -28,6 +28,7 @@ declare var jQuery: any;
       <filter-animals [childAnimalList]="masterAnimalList" (filterSender)="filterSender($event)"></filter-animals>
       </div>
     </div>
+    </md-sidenav-container>
     <footer class="page-footer">
       <div class="container">
         <div class="row">
@@ -46,7 +47,7 @@ declare var jQuery: any;
         </div>
       </div>
     </footer>
-  </md-sidenav-container>
+
   </div>
 
 `
@@ -55,10 +56,14 @@ declare var jQuery: any;
 export class AppComponent {
 
   masterAnimalList: Animal[] = [
-    new Animal('Black Bear', 'Wolverine', 2,  'Southern Trail', 5, 'male', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
+    new Animal('Black Bear', 'Wolverine', 2,  'Southern Trail', 5, 'male', 'Cool shade', 'People', 'mammal', 'healthy', 'carnivore'),
     new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
-    new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
-    new Animal('Arctic Fox', 'Moon', 2,  'Northern Trail', 5, 'female', 'Cool shade', 'Loud noises', 'mammal', 'healthy', 'carnivore'),
+    new Animal('Gorilla', 'Sully', 8,  'Northern Trail', 5, 'female', 'Trees', 'Other Animals', 'mammal', 'Sick', 'carnivore'),
+    new Animal('Alligator', 'Dundee', 2,  'Eastern Swamp', 9, 'male', 'Water', 'none', 'reptile', 'healthy', 'carnivore'),
+    new Animal('Alligator', 'Melody', 2,  'Eastern Swamp', 6, 'female', 'Water', 'none', 'reptile', 'healthy', 'carnivore'),
+      new Animal('Gorilla', 'Tim', 8,  'Northern Trail', 5, 'male', 'Trees', 'Other Animals', 'mammal', 'Healthy', 'carnivore'),
+      new Animal('Polar Bear', 'Cola', 2,  'Eastern Trail', 5, 'male', 'Cool Temperatures', 'birds', 'mammal', 'healthy', 'carnivore'),
+
   ];
 
   animalSelected = null;
