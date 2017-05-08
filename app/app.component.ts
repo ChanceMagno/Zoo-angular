@@ -12,13 +12,13 @@ declare var jQuery: any;
     <div class="nav-wrapper">
       <a class="brand-logo right">Portland Zoo</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a (click)="sidenav.toggle()" id="addAnimalButton">Add Animal</a></li>
+        <li><a (click)="sidenav.toggle()" id="addAnimalButton" (click)='showAddForm()'>Add Animal</a></li>
       </ul>
     </div>
   </nav>
   <md-sidenav #sidenav class="example-sidenav" mode="push">
-    <add-animal (newAnimalSender)="addNewAnimal($event)" (closeNavBar)="sidenav.toggle()"> </add-animal>
-    <edit-animal [childSelectedAnimal]="animalSelected"  (updatedAnimalSender)="updateAnimal($event)" (hideNavBar)="sidenav.toggle()"></edit-animal>
+    <add-animal *ngIf="showForm" (newAnimalSender)="addNewAnimal($event)" (closeNavBar)="sidenav.toggle()"> </add-animal>
+    <edit-animal [childSelectedAnimal]="animalSelected"  (updatedAnimalSender)="updateAnimal($event)" (hideNavBar)="sidenav.toggle()" (click)='hideAddForm()'></edit-animal>
   </md-sidenav>
     <div class="row">
       <div class="col m10">
@@ -64,6 +64,7 @@ export class AppComponent {
   animalSelected = null;
   selectAnimalsFilterType: string = "All";
   selectFilterValue: string;
+  showForm = null;
 
   filterSender(filterParams){
     this.selectFilterValue = filterParams[1];
@@ -74,8 +75,16 @@ export class AppComponent {
     this.masterAnimalList.push(newAnimal);
   }
 
+  showAddForm(){
+    this.showForm = "true";
+  }
+
   editAnimal(animal) {
     this.animalSelected = animal;
+  }
+
+  hideAddForm(){
+    this.showForm = null;
   }
 
   updateAnimal(updateInfo) {
