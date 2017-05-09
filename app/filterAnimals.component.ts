@@ -12,7 +12,7 @@ declare var jQuery: any;
     <li *ngFor="let category of animalCategories; let i = index">
     <div class="collapsible-header">{{animalCategoryDisplayName[i]}}</div>
       <div class="collapsible-body">
-        <button md-button class="filterButtons" *ngFor = "let animal of childAnimalList|uniqueness:category"  (click)="filterOnClick(category, animal)" onclick="Materialize.toast('Animal Filter Applied', 4000)"> {{animal}}</button>
+        <button md-button class="filterButtons toastPositionLeft" *ngFor = "let animal of childAnimalList|uniqueness:category"  (click)="filterOnClick(category, animal)" onclick="Materialize.toast('Animal Filter Applied', 4000)"> {{animal}}</button>
       </div>
     </li>
   </ul>
@@ -32,6 +32,7 @@ export class FilterAnimalComponent {
   filterOnClick(value, selectedOption){
     var filterParams = [value, selectedOption];
     this.filterSender.emit(filterParams);
+    console.log(value, selectedOption)
   }
 
   ngAfterViewInit() {

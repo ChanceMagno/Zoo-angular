@@ -22,6 +22,7 @@ declare var jQuery: any;
   </md-sidenav>
     <div class="row">
       <div class="col m10">
+        <h3>Filtering by: {{currentlyDisplaying[0]}}: {{currentlyDisplaying[1]}}</h3>
         <all-animals [childAnimalList]="masterAnimalList|selectAnimals:selectAnimalsFilterType:selectFilterValue" (displayEdit)="editAnimal($event)" (showNavBar)="sidenav.toggle();hideAddForm()"> </all-animals>
       </div>
       <div class="col m2">
@@ -70,10 +71,20 @@ export class AppComponent {
   selectAnimalsFilterType: string = "All";
   selectFilterValue: string;
   showForm = null;
+  currentlyDisplaying: string [] = ["All", "Animals"];
 
   filterSender(filterParams){
     this.selectFilterValue = filterParams[1];
     this.selectAnimalsFilterType = filterParams[0];
+    if (filterParams[0] !== undefined) {
+      var testString = filterParams[0].charAt(0).toUpperCase() + filterParams[0].slice(1);
+      this.currentlyDisplaying = [testString, filterParams[1]];
+      console.log(this.currentlyDisplaying);
+    } else {
+      this.currentlyDisplaying = ["All", "Animals"];
+    }
+
+
   }
 
   addNewAnimal(newAnimal) {

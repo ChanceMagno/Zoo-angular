@@ -52,12 +52,13 @@ export class AllAnimalComponent {
   @Input() childAnimalList: Animal [];
   @Output() displayEdit = new EventEmitter ();
   @Output() showNavBar = new EventEmitter ();
+  @Output() deleteAnimal = new EventEmitter ();
   selectedAnimal: Animal;
 
   showEdit(animal) {
     this.showNavBar.emit();
     this.displayEdit.emit(animal);
     this.selectedAnimal = animal;
-
   }
+
 }

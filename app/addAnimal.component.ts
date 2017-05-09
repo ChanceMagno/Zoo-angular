@@ -65,7 +65,7 @@ declare var jQuery: any;
      </div>
      </div>
      <div class="col m6">
-     <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons"  md-button (click)="addNewAnimal(species.value, name.value, age.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value, animalType.value, healthStatus.value, diet.value)" onclick="Materialize.toast('Animal Saved', 4000)" >add</i></a>
+     <a class="btn-floating btn-large waves-effect waves-light blue"> <i class="material-icons"  md-button (click)="addNewAnimal(species.value, name.value, age.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value, animalType.value, healthStatus.value, diet.value)" onclick="Materialize.toast('Animal Saved', 4000)" (click)="species.value=''" (click)="name.value=''" (click)="age.value=''" (click)="location.value=''" (click)="caretakers.value=''" (click)="sex.value=''" (click)="likes.value=''" (click)="dislikes.value=''" (click)="animalType.value=''" (click)="healthStatus.value=''" (click)="diet.value=''">add</i></a>
      </div>
      </div>
     </md-card>
