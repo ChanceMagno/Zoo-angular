@@ -3,6 +3,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+
 }
 
 main {
@@ -26,6 +27,10 @@ li .collapsible-header:hover {
 .collapsible-header {
   background-color: #3f51b5 !important;
   color: black;
+}
+
+.card-Content {
+  font-size: 18px;
 }
 
 .collapsible-header a{
@@ -54,6 +59,8 @@ div.mat-sidenav-content {
   position: relative
 }
 
+
+
 .loadingPage {
   margin: 0;
   position: absolute;
@@ -63,25 +70,13 @@ div.mat-sidenav-content {
   transform: translate(-50%, -50%)
   }
 
-md-card.mat-card {
-  height: auto;
-  border-color: #3f51b5;
-  border-width: medium;
-  border-style: solid;
-  border-radius: 30px;
-  padding-bottom: 10px;
-  background-color: #a2b8db;
+.content {
+  color: black;
+  font-size: 18px;
 }
 
-md-card.mat-card:hover {
-  background-color: lightblue !important;
-  font-size: 110%;
-  transition: background-color 1s linear;
-  transition: font-size .5s linear;
-  border-width: medium;
-  border-style: solid;
-  border-radius: 30px;
-  padding-bottom: 10px;
+.likes {
+  font-size: 18px;
 }
 
 nav {
