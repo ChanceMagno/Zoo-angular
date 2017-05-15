@@ -78,7 +78,7 @@ export class AddAnimalComponent {
 
     addNewAnimal(species, name, age, location, caretakers, sex, likes, dislikes, animalType, healthStatus, diet){
       if(species.length == 0 || name.length == 0 || age == 0 || location.length == 0 || caretakers == 0 || likes.length == 0 || dislikes.length == 0 || animalType.length == 0 || healthStatus.length == 0 || diet.length == 0) {
-        console.log("here");
+        confirm("Please fill out all sections");
       } else {
       var newAnimal: Animal = new Animal(species, name, parseInt(age), location, parseInt(caretakers), sex, likes, dislikes, animalType, healthStatus, diet);
       this.newAnimalSender.emit(newAnimal)
