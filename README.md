@@ -38,13 +38,15 @@ There are many options available, but we recommend using a terminal program call
 /archive/master.zip) to download the repo
   * Unzip the zipped repository
 * Once you have the repository on your computer, navigate in terminal/command line into Zoo-angular. (example: cd /desktop/Zoo-angular)
-***IMPORTANT ***
 * Inside Zoo-angular type the following commands:
-1. npm init
-2. bower init
-3. npm install materialize-css --save
-4. bower install materialize --save
 * type gulp serve and the page will automatically load
+
+### In Progress/future plans
+*implement angular2 for better organized
+*implement firebase database 
+*clean up page, improve navigation
+*adjust styling to better display content, add images for animals
+
 
 
 
